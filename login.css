@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-background-color: #000;
+  /* --main-background-color: #fff; */
+  --main-container-background-color: #303030;
+  /* --main-container-background-color: #ededed; */
+  --main-container-hover-background-color: #292929;
+  /* --main-container-hover-background-color: #c7c7c7; */
+  --main-color: #fff;
+  /* --main-color: #000; */
+  --red-color: #dc7657;
+  --green-color: #77cca6;
+  --yellow-color: #d9dc58;
+}
+/* width */
+::-webkit-scrollbar {
+  /* width: 10px; */
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: aliceblue;
+}
+
+.main {
+  position: relative;
+  max-width: 420px;
+  padding: 0rem 1rem 1rem 1rem;
+  width: 100%;
+  border-radius: 40px;
+  margin: auto;
+  aspect-ratio: 8/16;
+  background-color: var(--main-background-color);
+  color: var(--main-color);
+  overflow-y: scroll;
+  border: 4px solid silver;
+}
+
+.main main {
+  padding: 1rem;
+}
+.main main form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+main form input {
+  outline: 1px solid transparent;
+  text-transform: capitalize;
+  padding: 1rem;
+  border: none;
+  border-radius: 1.4rem;
+  transition: 0.2s linear;
+}
+main form input:focus {
+  outline: 2px solid var(--red-color);
+}
+main form button {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 1.4rem;
+  font-weight: 500;
+}
+main .heading p {
+  color: gray;
+}
+
+main .heading {
+  padding: 1rem 0rem;
+}
+
+main form img {
+  border-radius: 50%;
+  max-width: 100px;
+  cursor: pointer;
+}
+main form .image-con {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main form .image-con i {
+  position: absolute;
+  bottom: 0;
+  right: 36%;
+  border: 1px solid var(--main-color);
+  background: var(--main-background-color);
+  padding: 0.4rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}

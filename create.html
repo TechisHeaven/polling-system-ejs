@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="create.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>New Poll</h1>
+        <a href="index.html"> <i class="fa-solid fa-xmark"></i></a>
+      </header>
+      <main>
+        <form class="box">
+          <button class="colorBtn" type="button">
+            <i class="fa-solid fa-right-left"></i> Change Color
+          </button>
+          <textarea
+            id="question"
+            name="question"
+            rows="4"
+            cols="45"
+            maxlength="60"
+            placeholder="Enter your question"
+          ></textarea>
+          <div class="option">
+            <i class="fa-solid fa-plus"></i>
+            <input
+              type="text"
+              id="option-1"
+              maxlength="20"
+              class=""
+              placeholder="Option 1"
+            />
+          </div>
+          <div class="option">
+            <i class="fa-solid fa-plus"></i>
+            <input
+              type="text"
+              maxlength="20"
+              id="option-2"
+              class=""
+              placeholder="Option 2"
+            />
+          </div>
+          <button type="submit" class="postBtn">
+            <i class="fa-regular fa-paper-plane"></i> Post
+          </button>
+        </form>
+      </main>
+    </div>
+    <script>
+      function changeColor() {
+        const box = document.querySelector(".box");
+        let randomNumber = Math.random() * 4;
+        randomNumber = Math.trunc(randomNumber);
+
+        if (box.classList.contains(randomNumber)) {
+          randomNumber++;
+        }
+        if (randomNumber === 0 || randomNumber === 4) {
+          randomNumber = 1;
+        }
+
+        switch (randomNumber) {
+          case 1:
+            box.classList.remove("yellow");
+            box.classList.remove("green");
+            box.classList.remove("2");
+            box.classList.remove("3");
+            box.classList.add("red");
+            box.classList.add("1");
+
+            break;
+          case 2:
+            box.classList.remove("yellow");
+            box.classList.remove("red");
+            box.classList.add("green");
+            box.classList.remove("1");
+            box.classList.remove("3");
+            box.classList.add("2");
+
+            break;
+          case 3:
+            box.classList.remove("red");
+            box.classList.remove("green");
+            box.classList.add("yellow");
+            box.classList.remove("1");
+            box.classList.remove("2");
+            box.classList.add("3");
+
+            break;
+
+          default:
+            box.classList.add("red");
+            box.classList.add("1");
+            break;
+        }
+        console.log(randomNumber);
+      }
+      document
+        .querySelector(".colorBtn")
+        .addEventListener("click", () => changeColor());
+    </script>
+  </body>
+</html>
